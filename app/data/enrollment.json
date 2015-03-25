@@ -1,0 +1,30 @@
+{
+    "CommunicationTypes": [
+        "Ethernet",
+        "USB",
+        "Wifi",
+        "Kühl"
+    ],
+    "Products": [
+        "AC",
+        "Customer"
+    ],
+    "ModuleTypes": [
+        "signup",
+        "distributed",
+        "setup",
+        "online"
+    ],
+    "TimePeriods": [
+        "2014",
+        "AllYears"
+    ],
+    "ViewTypes": [
+        "DayByDay",
+        "Cumulative"
+    ],
+    "ViewForms": [
+        "Graph",
+        "Map"
+    ]
+}

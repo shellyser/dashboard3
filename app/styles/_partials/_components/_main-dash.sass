@@ -1,0 +1,126 @@
+
+.title-with-button
+    display: block
+    vertical-align: middle
+    margin-bottom: .5em
+    +box-sizing(border-box)
+    +break-min($main-header-break)
+        display: block
+        margin-bottom: 0
+        width: auto
+
+.export-data
+    color: $dark-grey
+    margin-left: 0
+    +break-min($main-header-break)
+        font-size: 1em
+
+.export-data-modal
+    background-color: white(.7)
+    padding: 1rem
+    h1
+        margin: 0
+        font-size: 1.5rem
+    +before
+        border-color: transparent transparent white(.7)
+        left: 1rem
+    +break-min($main-header-break)
+        position: absolute
+        z-index: 1
+        left: 1rem
+        top: 7.5rem
+        min-width: 20rem
+        background-color: white(.95)
+        +border-radius(2px)
+        +box-shadow(black(.15) 0 2px 5px)
+        +before
+            left: .5rem
+            border-color: transparent transparent white(.95)
+
+.export-data-options
+    margin: 1rem 0
+    > fieldset
+        border: none
+        margin: 0
+        padding: 1rem 0
+        overflow: hidden
+        > legend
+            margin: 0
+            font-size: 1.2rem
+            color: $dark-grey-2
+            border-bottom: solid 1px black(.1)
+            line-height: 1.5rem
+            width: 100%
+    .exp
+        font-size: .7em
+        font-style: italic
+        padding: 0 1em
+    .option
+        display: none
+        &:checked + .option-label
+            > span
+                background-color: black(.25)
+    .option-label
+        +box-sizing(border-box)
+        width: 50%
+        display: inline-block
+        vertical-align: top
+        padding: 0
+        > span
+            display: block
+            padding: 0 .5rem
+            line-height: 2.5em
+            background-color: black(.1)
+            +border-radius(3px)
+            text-align: center
+            +transition-property(background-color)
+            +transition-duration(.2s)
+            position: relative
+            cursor: pointer
+        &:nth-of-type(2n-1)
+            padding-right: .5rem
+        &:nth-of-type(2n)
+            padding-left: .5rem
+    .btn
+        +reset-input-appearance
+        text-align: center
+        font-size: 1rem
+        line-height: 2rem
+        background-color: rgba(77, 197, 242, .6)
+        border: none
+        +border-radius(3px)
+        padding: .3rem 2rem
+        color: $dark-grey-2
+        font-family: "PT Sans"
+        +transition-property(background-color)
+        +transition-duration(.2s)
+        cursor: pointer
+        &:focus, &:hover
+            outline: none
+            background-color: rgba(77, 197, 242, .8)
+    .option-checked
+        position: absolute
+        top: 50%
+        bottom: 0
+        margin-top: -.5rem
+        font-size: 1rem
+        right: .5rem
+        width: 2rem
+        text-align: center
+        line-height: 100%
+
+    .submit-wrap
+        margin-top: 1rem
+        text-align: right
+
+
+
+.display-option-date
+    display: inline-block
+    margin-left: .5rem
+    cursor: pointer
+    > .show-hide-btn
+        +border-left-radius(0)
+        margin-left: 0
+
+

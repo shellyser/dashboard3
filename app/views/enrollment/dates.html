@@ -1,0 +1,13 @@
+<div id="date-options" class="date-options-drawer drawer closed">
+  <h2>Quick</h2>
+  <div class="date-options-section">
+    <ul class="date-options">
+      <li ng-repeat="dateSpan in enrollmentdata.DateSpan" ng-class="{ active: (viewParameters.datespan == 'Past ' + dateSpan + ' Days') }" trigger trigger-target="date-options" date-span value="{{ dateSpan }}" verbose-value="Past {{ dateSpan }} Days" class="date-option">
+        <span>Past {{ dateSpan }} Days</span>
+      </li>
+    </ul>
+  </div>
+  <h2>Custom Select</h2>
+  <div class="date-options-section">
+  </div>
+</div>

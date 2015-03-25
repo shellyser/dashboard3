@@ -1,0 +1,13 @@
+{
+    "ProgramName": "coolNYC",
+    "ProgramAge": 1,
+    "TimePeriods": ["2014", "AllYears"],
+    "CompanyName": "Con Edison",
+    "SupportEmail": "support@thinkecoinc.com",
+<<<<<<< HEAD
+    "Categories": ["Enrollments","DR/Events","Analytics" , "Campaigns"] 
+=======
+    "Categories": ["Enrollment","DR/Events","Analytics" , "Campaigns"] 
+>>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
+}
+

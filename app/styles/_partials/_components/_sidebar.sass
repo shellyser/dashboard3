@@ -1,0 +1,68 @@
+aside
+	display: block
+	width: 8.1rem
+	height: 100%
+	position: fixed
+	left: 0
+	padding-top: .75rem
+	background-color: $black
+	+transition(left 1s)
+	ul
+		margin: auto
+		padding-left: 0px
+		li
+			list-style: none
+			@each $color in $colors
+				$j: index($colors, $color)
+				&:nth-child(#{$j+1})
+					>a
+						>.fa
+							color: #{$color}
+			a
+				padding: .9em
+				background-color: $black
+				display: block
+				font-weight: 400
+				text-align: center
+				color: $white
+				text-decoration: none
+				border-bottom: 1px solid rgba(255,255,255,0.1)
+				.fa
+					display: block
+					padding-bottom: .25em
+					font-size: 1.5rem
+					
+				em
+					font-style: normal
+			&:nth-last-of-type(2) 
+				a
+					border-top: 1px solid rgba(255,255,255,0.4)
+					color: $dark-grey
+					border-bottom: 0px solid $white
+					font-weight: 700
+			&:nth-last-of-type(1) 
+				a
+					color: $dark-grey
+					border-bottom: 0px solid $white
+					font-weight: 700
+		.active
+			color: $white
+			background-color: $dark-grey-3
+			+transition(0.5s linear all)
+
+
+aside.collapse 
+	left: -4rem
+	em
+		+transition(.5s)
+		+opacity(0)
+	.fa
+		margin: 0.5rem 0rem -1rem 4.45rem 
+		padding-right: .75rem
+		+transition(1s)
+
+.fa.fa-tachometer
+	color: #4fb395
+
+
+

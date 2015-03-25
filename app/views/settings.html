@@ -1,0 +1,87 @@
+<div class="title">
+    <h1>Account Settings</h1>
+</div>
+<div class="settings-wrap">
+    <ul class="settings">
+        <li class="setting">
+            <div class="setting-wrap">
+                <h2>Name</h2>
+                <p class="settings-special">
+                    {{ user.firstName | capitalize }} {{ user.lastName | capitalize }}
+                </p>
+                <h3>Change Name</h3>
+                <form class="settings-form" name="changeName" ng-submit="submitChangeName()" id="changeName" novalidate>
+                    <div ng-show="showNameSuccess" class="form-account-success success-message message">
+                        <h1><span class="fa fa-check-circle"></span>Success!</h1><h2>Your name has been updated.</h2>
+                        <span class="close" close-message>Close</span>
+                    </div>
+                    <div ng-show="showNameError" class="form-account-error error-message">
+                        <h1>
+                            <span class="fa fa-exclamation-circle"></span>Error
+                        </h1>
+                        <ul class="manual-errors">
+                        </ul>
+                        <form-errors class="autogen-errors" ng-show=false></form-errors>
+                    </div>
+                    <div class="field">
+                        <label for="firstName">First Name</label>
+                        <input type="text" placeholder="{{ user.firstName | capitalize }}" name="firstName" ng-model="firstName" id="firstName" required>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" placeholder="{{ user.lastName | capitalize }}" name="lastName" id="lastName" ng-model="lastName" required>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </li><li class="setting">
+            <div class="setting-wrap">
+            <h2>Password &amp; Security</h2>
+                <h3>Change Password</h3>
+                <form class="settings-form" ng-submit="submitPassword()" id="changePassword" name="changePassword" novalidate>
+                    <div class="form-account-success success-message message" ng-show="showPasswordSuccess">
+                        <h1><span class="fa fa-check-circle"></span>Success!</h1><h2>Your password has been updated.</h2>
+                        <span class="close" close-message>Close</span>
+                    </div>
+                    <div class="form-account-error error-message" ng-show="showPasswordError">
+                        <h1>
+                            <span class="fa fa-exclamation-circle"></span>Error
+                        </h1>
+                        <ul class="manual-errors">
+                        </ul>
+                        <form-errors class="autogen-errors" ng-show=false></form-errors>
+                    </div>
+                    <div class="field">
+                        <label for="oldPassword">Old Password</label>
+                        <input type="password" placeholder="Old Password" name="oldPassword" id="oldPassword" ng-model="oldPassword" required>
+                    </div>
+                    <div class="field">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" placeholder="New Password" name="New Password" id="newPassword" ng-model="newPassword" required>
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" placeholder="Confirm Password" name="Confirm Password"  id="confirmPassword" ng-model="confirmPassword" required>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="settings-helptext" id="password-help">
+                    Passwords must:
+                    <ul class="password-reqs">
+                        <li class="password-req"><span class="fa fa-hand-o-right"></span>Be at least 8 characters long</li>
+                        <li class="password-req"><span class="fa fa-hand-o-right"></span>Contain at least one capital letter</li>
+                        <li class="password-req"><span class="fa fa-hand-o-right"></span>Contain at least one lowercase letter</li>
+                        <li class="password-req"><span class="fa fa-hand-o-right"></span>Contain at least one non-letter character</li>
+                    </ul>
+                </div>
+            </div>
+        </li><li class="setting">
+            <div class="setting-wrap">
+                <h2>Email</h2>
+                <p class="settings-special">
+                    {{ user.email | lowercase }}
+                </p>
+                <h3>Change Email</h3>
+                <p class="settings-helptext">
+                    To change your email settings, please contact <a href="#" ng-href="mailto:{{ program.SupportEmail }}">{{ program.SupportEmail }}</a>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>

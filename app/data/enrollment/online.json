@@ -1,0 +1,312 @@
+{
+    "years": {
+<<<<<<< HEAD
+      "2014": {
+        "cumulativeTotal": 100,
+        "data": {
+          "MappingData":{
+=======
+    	"2014": {
+    		"cumulativeTotal": 100,
+    		"data": {
+    			"MappingData":{
+>>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
+                    "usb": {
+                        "cumulativeTotal": 20,
+                        "data": {
+                            "10001": {
+                                 "latitude": 40.752,
+                                 "longitude": -73.995,
+                                 "value": 1,
+                                 "cumulativeTotal": 0
+                            },
+                            "10002": {
+                                 "latitude": 40.716,
+                                 "longitude": -73.998,
+                                 "value": 2,
+                                 "cumulativeTotal": 10
+                            },
+                            "10003": {
+                                 "latitude": 40.732,
+                                 "longitude": -73.99,
+                                 "value": 2,
+                                 "cumulativeTotal": 20
+                            },
+                            "10004": {
+                                 "latitude": 40.704,
+                                 "longitude": -74.012,
+                                 "value": 1,
+                                 "cumulativeTotal": 30
+                            },
+                            "10005": {
+                                 "latitude": 40.708,
+                                 "longitude": -74.012,
+                                 "value": 4,
+                                 "cumulativeTotal": 40
+                            },
+                            "10006": {
+                                 "latitude": 40.711,
+                                 "longitude": -73.013,
+                                 "value": 1,
+                                 "cumulativeTotal": 50
+                            },
+                            "11233": {
+                                "latitude": 40.672,
+                                "longitude": -73.925,
+                                "value": 1,
+                                "cumulativeTotal": 60
+                            }
+                        }
+                    },
+                    "ethernet": {
+                        "cumulativeTotal": 340,
+                        "data": {
+                            "10001": {
+                                 "latitude": 40.752,
+                                 "longitude": -73.995,
+                                 "value": 1,
+                                 "cumulativeTotal": 0
+                            },
+                            "10002": {
+                                 "latitude": 40.716,
+                                 "longitude": -73.998,
+                                 "value": 2,
+                                 "cumulativeTotal": 10
+                            },
+                            "10003": {
+                                 "latitude": 40.732,
+                                 "longitude": -73.99,
+                                 "value": 2,
+                                 "cumulativeTotal": 20
+                            },
+                            "10004": {
+                                 "latitude": 40.704,
+                                 "longitude": -74.012,
+                                 "value": 1,
+                                 "cumulativeTotal": 30
+                            },
+                            "10005": {
+                                 "latitude": 40.708,
+                                 "longitude": -74.012,
+                                 "value": 4,
+                                 "cumulativeTotal": 40
+                            },
+                            "10006": {
+                                 "latitude": 40.711,
+                                 "longitude": -73.013,
+                                 "value": 1,
+                                 "cumulativeTotal": 50
+                            },
+                            "11233": {
+                                 "latitude": 40.672,
+                                 "longitude": -73.925,
+                                 "value": 1,
+                                 "cumulativeTotal": 60
+                            }
+                        }
+                    },
+                    "wifi": {
+                        "cumulativeTotal": 1000,
+                        "data": {
+                            "10001": {
+                                 "latitude": 40.752,
+                                 "longitude": -73.995,
+                                 "value": 1,
+                                 "cumulativeTotal": 0
+                            },
+                            "10002": {
+                                 "latitude": 40.716,
+                                 "longitude": -73.998,
+                                 "value": 2,
+                                 "cumulativeTotal": 10
+                            },
+                            "10003": {
+                                 "latitude": 40.732,
+                                 "longitude": -73.99,
+                                 "value": 2,
+                                 "cumulativeTotal": 20
+                            },
+                            "10004": {
+                                 "latitude": 40.704,
+                                 "longitude": -74.012,
+                                 "value": 1,
+                                 "cumulativeTotal": 30
+                            },
+                            "10005": {
+                                 "latitude": 40.708,
+                                 "longitude": -74.012,
+                                 "value": 4,
+                                 "cumulativeTotal": 40
+                            },
+                            "10006": {
+                                 "latitude": 40.711,
+                                 "longitude": -73.013,
+                                 "value": 1,
+                                 "cumulativeTotal": 50
+                            },
+                            "11233": {
+                                 "latitude": 40.672,
+                                 "longitude": -73.925,
+                                 "value": 1,
+                                 "cumulativeTotal": 60
+                            }
+                        }
+                    },
+                    "kuhl": {
+                        "cumulativeTotal": 2340,
+                        "data": {
+                            "10001": {
+                                 "latitude": 40.752,
+                                 "longitude": -73.995,
+                                 "value": 1,
+                                 "cumulativeTotal": 0
+                            },
+                            "10002": {
+                                 "latitude": 40.716,
+                                 "longitude": -73.998,
+                                 "value": 2,
+                                 "cumulativeTotal": 10
+                            },
+                            "10003": {
+                                 "latitude": 40.732,
+                                 "longitude": -73.99,
+                                 "value": 2,
+                                 "cumulativeTotal": 20
+                            },
+                            "10004": {
+                                 "latitude": 40.704,
+                                 "longitude": -74.012,
+                                 "value": 1,
+                                 "cumulativeTotal": 30
+                            },
+                            "10005": {
+                                 "latitude": 40.708,
+                                 "longitude": -74.012,
+                                 "value": 4,
+                                 "cumulativeTotal": 40
+                            },
+                            "10006": {
+                                 "latitude": 40.711,
+                                 "longitude": -73.013,
+                                 "value": 1,
+                                 "cumulativeTotal": 50
+                            },
+                            "11233": {
+                                 "latitude": 40.672,
+                                 "longitude": -73.925,
+                                 "value": 1,
+                                 "cumulativeTotal": 60
+                            }
+                        }
+                    }
+<<<<<<< HEAD
+          },
+          "GraphingData":{
+            "usb": {
+              "cumulativeTotal": 180,
+              "data": {
+                "12/2/2014": 10,
+                "12/3/2014": 9,
+                "12/4/2014": 20,
+                "12/5/2014": 1,
+                "12/6/2014": 12,
+                "12/7/2014": 2,
+                "12/8/2014": 10
+              }
+            },
+            "ethernet": {
+              "cumulativeTotal": 200,
+              "data": {
+                "12/2/2014": 10,
+                "12/3/2014": 2,
+                "12/4/2014": 4,
+                "12/5/2014": 1,
+                "12/6/2014": 8,
+                "12/7/2014": 3,
+                "12/8/2014": 4
+              }
+            },
+            "wifi": {
+              "cumulativeTotal": 350,
+              "data":{
+                "12/2/2014": 1,
+                "12/3/2014": 5,
+                "12/4/2014": 3,
+                "12/5/2014": 2,
+                "12/6/2014": 10,
+                "12/7/2014": 2,
+                "12/8/2014": 2
+              }
+            },
+            "kuhl": {
+              "cumulativeTotal": 200,
+              "data":{
+                "12/2/2014": 1,
+                "12/3/2014": 5,
+                "12/4/2014": 6,
+                "12/5/2014": 8,
+                "12/6/2014": 4,
+                "12/7/2014": 2,
+                "12/8/2014": 8
+              }
+            }
+          }
+        }
+    }   
+=======
+    			},
+    			"GraphingData":{
+    				"usb": {
+    					"cumulativeTotal": 180,
+    					"data": {
+    						"12/2/2014": 10,
+    						"12/3/2014": 9,
+    						"12/4/2014": 20,
+    						"12/5/2014": 1,
+    						"12/6/2014": 12,
+    						"12/7/2014": 2,
+    						"12/8/2014": 10
+    					}
+    				},
+    				"ethernet": {
+    					"cumulativeTotal": 200,
+    					"data": {
+    						"12/2/2014": 10,
+    						"12/3/2014": 2,
+    						"12/4/2014": 4,
+    						"12/5/2014": 1,
+    						"12/6/2014": 8,
+    						"12/7/2014": 3,
+    						"12/8/2014": 4
+    					}
+    				},
+    				"wifi": {
+    					"cumulativeTotal": 350,
+    					"data":{
+    						"12/2/2014": 1,
+    						"12/3/2014": 5,
+    						"12/4/2014": 3,
+    						"12/5/2014": 2,
+    						"12/6/2014": 10,
+    						"12/7/2014": 2,
+    						"12/8/2014": 2
+    					}
+    				},
+    				"kuhl": {
+    					"cumulativeTotal": 200,
+    					"data":{
+    						"12/2/2014": 1,
+    						"12/3/2014": 5,
+    						"12/4/2014": 6,
+    						"12/5/2014": 8,
+    						"12/6/2014": 4,
+    						"12/7/2014": 2,
+    						"12/8/2014": 8
+    					}
+    				}
+    			}
+    		}
+	 	}   
+>>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
+    }
+}

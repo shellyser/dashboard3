@@ -1,0 +1,41 @@
+<header class="global">
+	<div class="wrap global-wrap">	
+		<button class="nav-button" ng-click="changeToggle()">
+			<i class="fa fa-bars"></i>
+		</button>    
+		<div class="global-select">
+		    <a href="/">
+		        <span class="global-logo"><img ng-src="{{ logo }}"></span>
+		    </a>
+		</div>
+        <div class="global-goodies">
+			<span class="global-goodies-user">
+	            Welcome, <span class="global-user trigger trigger-hover" trigger>UserName</span>
+	        </span>
+	        <span class="global-goodies-location">
+	            New York, NY
+	        </span>
+	        <span class="global-goodies-location extra">
+	            Current temp: 84 F  &nbsp; &nbsp; February 03, 2014
+	        </span>
+        </div> 
+	</div>
+	<nav class="global-utils target closed" id="global-sidebar">
+	    <span class="global-util">
+			<a ng-href="dashboard">Dashboard</a>
+	    </span>
+	    <span class="global-util" ng-repeat="category in program.Categories" >
+			<a ui-sref=".{{ category | lowercase }}">{{ category | capitalize }}</a>
+	    </span>
+		<span class="global-util global-general">
+			<a ui-sref="reports">Reports</a>
+	    </span>
+		<span class="global-util global-general">
+			<a ui-sref="settings">Settings</a>
+	    </span>
+	     <span class="global-util global-general">
+			<a ui-sref="help">Help</a>
+	    </span>
+	</nav>
+</header>
+  

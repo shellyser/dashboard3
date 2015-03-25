@@ -1,0 +1,58 @@
+<!doctype html>
+<html id="ng-app" ng-app="dashApp" ng-controller="BaseCtrl">
+    <head>
+        <meta charset="utf-8">
+        <script src="scripts/jquery.min.js"></script>
+        <!--[if lte IE 8]>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.loading-title').html('WARNING: Your browser cannot run this application.');
+            $('.loading-title').addClass('nope');
+            $('#loading h2').html('For full support, <a href="http://browsehappy.com">update your browser</a>.');
+          });
+        </script>
+        <![endif]-->
+        <!--[if IE 9]>
+          <script src="scripts/ie9.js"></script>
+        <![endif]-->
+        <title ng-bind-template="{{ program.ProgramName }} Dashboard | {{ page | capitalize }}">Dashboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/stylesheets/style.css">
+        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+         
+    </head>
+    <!--[if IE 9]>
+    <body class="ye-olde-ie">
+    <![endif]-->
+    <!--[if !IE]> -->
+    <body>
+    <!-- <![endif]-->
+        <div id="loading">
+          <span class="fa fa-circle-o-notch fa-spin loading-icon"></span>
+          <h1 class="loading-title">Loading</h1>
+          <h2>Refresh page if this message does not disappear</h2>
+        </div>
+        <div ui-view="master"></div>
+      <!--[if IE 9]>
+      <script src="scripts/libraries.min.js"></script>
+      <script src="scripts/angular.min.js"></script>
+      <script src="scripts/angular-resource.js"></script>
+      <script src="scripts/angular-ui-router.min.js"></script>
+      <script src="scripts/app.js"></script>
+      <!-- include: "type": "js", "files": "scripts/**/*.js" -->
+      <![endif]-->
+      <!--[if !IE]> -->
+      <script src="scripts/angular.min.js"></script>
+      <script src="scripts/angular-resource.js"></script>
+           <!--<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true_or_false&key=AIzaSyChufrPfMa7zx_x-kNE_HoGsdhsNkaqO8o">
+      </script> -->
+      <script src="scripts/angular-ui-router.min.js"></script>
+      <script src="scripts/app.js"></script>
+     <!-- include: "type": "js", "files": "scripts/**/*.js" -->
+      <!-- <![endif]-->
+    </body>
+</html>

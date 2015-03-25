@@ -1,0 +1,17 @@
+<header class="module-header">
+    <h2 class="module-title">{{ module | capitalize }}</h2>
+    <span class="module-expand-button trigger fa fa-expand"></span>
+</header>
+<div class="module-body">
+<!--     <div class="module-loading"><span class="fa fa-circle-o-notch fa-spin loading-icon"></span></div>
+ -->    <div class="module-grapharea">
+        <div class="graph-wrap">
+            <img src="assets/img/tmp_images/dash_events.jpg" ng-show="module === 'DR/Events'">
+            <img src="assets/img/tmp_images/dash_analytics.jpg" ng-show="module === 'Analytics'">
+            <img src="assets/img/tmp_images/dash_enrollment.jpg" ng-show="module === 'Enrollment'">
+            <img src="assets/img/tmp_images/dash_marketing.jpg" ng-show="module === 'Campaigns'">
+        </div>
+    </div>
+</div>
+<div class="module-footer"><a href="#/{{ module | lowercase | urlify }}">View Details <i class="fa fa-arrow-circle-right"></i></a></div>
+

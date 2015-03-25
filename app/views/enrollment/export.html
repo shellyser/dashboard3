@@ -1,0 +1,26 @@
+<div class="export-data-modal modal drawer closed" id="export-data-modal">
+  <h1>Export Data as CSV</h1>
+  <form class="export-data-options" id="export-data-options">
+    <fieldset>
+      <legend>Timespans<span class="exp">Select at least one</span></legend><div class="options">
+        <input type="checkbox" id="IncludeCurrentYear" name="timespans" class="option" ng-model="IncludeCurrentYearChecked" ng-init="IncludeCurrentYearChecked=true"><label for="IncludeCurrentYear" class="option-label">
+          <span>2014<span ng-show="IncludeCurrentYearChecked" class="option-checked fa fa-check"></span></span>
+        </label><input type="checkbox" id="IncludeAllYears" name="timespans" class="option" ng-model="IncludeAllYearsChecked" ng-init="IncludeAllYearsChecked=true"><label for="IncludeAllYears" class="option-label">
+            <span>All Years<span ng-show="IncludeAllYearsChecked" class="option-checked fa fa-check"></span></span>
+            </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Views<span class="exp">Select at least one</span></legend><div class="options">
+        <input type="checkbox" id="IncludeCumulativeView" name="views" class="option" ng-model="IncludeCumulativeViewChecked" ng-init="IncludeCumulativeViewChecked=true"><label for="IncludeCumulativeView" class="option-label">
+          <span>Cumulative<span ng-show="IncludeCumulativeViewChecked" class="option-checked fa fa-check"></span></span>
+          </label><input type="checkbox" id="IncludeDayByDayView"  ng-model="IncludeDayByDayViewChecked" ng-init="IncludeDayByDayViewChecked=true"name="views" class="option"><label for="IncludeDayByDayView" class="option-label">
+          <span>Day-By-Day<span ng-show="IncludeDayByDayViewChecked" class="option-checked fa fa-check"></span></span>
+        </label>
+      </div>
+    </fieldset>
+    <div class="field submit-wrap">
+      <input ng-model="exportDataSubmit" type="submit" class="btn" value="Download CSV" export-data />
+    </div>
+  </form>
+</div>

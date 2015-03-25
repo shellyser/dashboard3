@@ -1,0 +1,54 @@
+<main class="login">
+    <div class="login-wrap">
+        <span class="login-logo"><img ng-src="{{ logo }}"></span>
+        <div class="login-int" id="login-int">
+            <div class="login-int-wrap" id="login-1">
+                <form class="login-form" name="login" ng-submit="submitLogin(login, finishLogin, noLogin)" id="login-form" novalidate>
+                    <div class="form-login-error error-message" ng-show="showLoginError">
+                        <h1><span class="fa fa-exclamation-circle"></span>Error</h1>
+                        <ul class="manual-errors">
+                        </ul>
+                        <form-errors class="autogen-errors" ng-show=false>
+                        </form-errors>
+                        <h2>If you have forgotten your password, <span class="form-error-forgot" page-login>click here</span> to access your account.</h2>
+                    </div>
+                    <label for="username" class="login-hide-label">Username</label>
+                    <input type="email" placeholder="Email" id="username" ng-model="userEmail" name="userEmail" nice-name="Email" error-messages="{ email: 'Email is invalid.' }" required>
+                    <label for="password" class="login-hide-label">Password</label>
+                    <input type="password" placeholder="Password" id="password" ng-model="userPassword" name="userPassword" nice-name="Password" ng-minlength="8" error-messages="{ minlength: 'Invalid username or password.' }" required>
+                    <span class="form-wrap">
+                        <input type="checkbox" id="remember-me" ng-show=false>
+                        <label for="remember-me" ng-show=false>Remember Me</label>
+                    </span>
+                    <input type="submit" value="Log In">
+                </form>
+                <span class="login-link" page-login>
+                    Forgot Password
+                </span>
+            </div><div class="login-int-wrap login-forgot" id="login-2">
+                <h1>Forgot Password</h1>
+                <p>Enter your email below, and our support team will be in contact with you shortly to help you regain access to your account.</p>
+                <form class="login-form" name="loginForgot" novalidate ng-submit="checkForgotThenValidate(loginForgot, email)" id="login-forgot">
+                    <div class="form-login-error error-message" ng-show="showError">
+                        <h1><span class="fa fa-exclamation-circle"></span>Error</h1>
+                        <ul class="manual-errors">
+                        </ul>
+                        <form-errors class="autogen-errors" ng-show=false>
+                        </form-errors>
+                    </div>
+                    <div class="form-login-success success-message" ng-show="showSuccess">
+                        <h1><span class="fa fa-check-circle"></span>Success!</h1><h2>Support has been contacted and help is on the way. <span class="form-error-forgot" page-login>Return to login form?</span></h2>
+                    </div>
+                    <span class="form-wrap">
+                        <label for="email" class="login-hide-label" name="forgotEmail" required>E-mail address</label>
+                        <input type="email" placeholder="Email Address" name="email" ng-model="email" error-messages="{ email: 'Email is invalid.' }" required>
+                    </span>
+                    <input type="submit" value="Help Me!">
+                </form>
+                <span class="login-link" page-login>
+                    Back to login form
+                </span>
+            </div>
+        </div>
+    </div>
+</main>

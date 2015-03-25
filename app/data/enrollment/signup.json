@@ -1,0 +1,62 @@
+{
+    "years": {
+        "2014": {
+            "cumulativeTotal": 100,
+            "data":{
+                "MappingData":{
+                    "10001":  {
+                        "latitude": 40.752, 
+                        "longitude": -73.995, 
+                        "value": 1,
+                        "cumulativeTotal": 100
+                    },
+                    "10002":  {
+                        "latitude": 40.716, 
+                        "longitude": -73.988, 
+                        "value": 2,
+                        "cumulativeTotal": 203
+                    },
+                    "10003":  {
+                        "latitude": 40.732, 
+                        "longitude": -73.990, 
+                        "value": 2,
+                        "cumulativeTotal": 308
+                    },
+                    "10004":  {
+                        "latitude": 40.704, 
+                        "longitude": -74.012, 
+                        "value": 1,
+                        "cumulativeTotal": 203
+                    },
+                    "10005":  {
+                        "latitude": 40.708, 
+                        "longitude": -74.012, 
+                        "value": 4,
+                        "cumulativeTotal": 306
+                    },
+                    "10006":  {
+                        "latitude": 40.711, 
+                        "longitude": -74.013, 
+                        "value": 1,
+                        "cumulativeTotal": 103
+                    },
+                    "11233":  {
+                        "latitude": 40.672, 
+                        "longitude": -73.925, 
+                        "value": 1,
+                        "cumulativeTotal": 306
+                    }
+                },
+                "GraphingData": {
+                    "12/02/2014": 8,
+                    "12/03/2014": 5,
+                    "12/04/2014": 1,
+                    "12/05/2014": 2,
+                    "12/06/2014": 0,
+                    "12/07/2014": 3,
+                    "12/08/2014": 2
+                }
+            }
+        }
+    }
+}

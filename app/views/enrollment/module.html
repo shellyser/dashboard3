@@ -1,0 +1,21 @@
+<header class="module-header">
+    <h2 class="module-title">{{ module | capitalize }}</h2>
+    <h2 class="module-stat"></h2>
+    <div class="btn-group">
+        <select ng-options="viewtype for viewtype in enrollment.ViewTypes" value="{{ viewtype }}" ng-model="radiobutton"></select>
+    </div>
+    <span class="module-expand-button trigger fa fa-expand"></span>
+</header>
+<div class="module-body">
+    <div class="module-controls">
+        <h2 class="module-body-stat"></h2>
+    </div>
+    <div class="module-loading"><span class="fa fa-circle-o-notch fa-spin loading-icon"></span></div>
+    <div class="module-grapharea">
+        <div class="graph-wrap" ng-switch on="radiobutton" style="width:100%; height: 100%">
+          <canvas id="graph-{{$index + 1}}" signups graph-content="{{module}}" graph-num="{{$index + 1}}" ng-switch-when="Graph"></canvas>   
+          <div id="map-canvas" map map-content="{{module}}" map-num="{{$index + 1}}"  ng-switch-when="Map"></div> 
+        </div>
+        <div class="module-no-data">No data</div>
+    </div>
+</div>
