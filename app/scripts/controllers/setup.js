@@ -135,11 +135,7 @@ angular.module('dashApp')
  						cumulativeTotal = 0,
  				 		graphDataArray = [];
 		 				parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
 		 				parseMapData(result);
-
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 		 			})
 	 		} else {
 	 			
@@ -150,10 +146,7 @@ angular.module('dashApp')
 						cumulativeTotal = 0,
 				 		graphDataArray = [];
 	 					parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
 	 					parseMapData(result);
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 	 				})
 		 	}
 		};
@@ -262,7 +255,6 @@ angular.module('dashApp')
 		}	
 		$scope.graph = graphDataArray;
 	}
-<<<<<<< HEAD
 
 	function parseMapData(data){
 		var markers = [],
@@ -313,8 +305,4 @@ angular.module('dashApp')
 		}
 		$scope.map = mapData;
 	}
-
-	
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 });

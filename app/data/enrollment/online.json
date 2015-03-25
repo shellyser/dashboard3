@@ -1,16 +1,9 @@
 {
     "years": {
-<<<<<<< HEAD
       "2014": {
         "cumulativeTotal": 100,
         "data": {
           "MappingData":{
-=======
-    	"2014": {
-    		"cumulativeTotal": 100,
-    		"data": {
-    			"MappingData":{
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
                     "usb": {
                         "cumulativeTotal": 20,
                         "data": {

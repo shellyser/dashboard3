@@ -10,9 +10,9 @@
         "Customer"
     ],
     "ModuleTypes": [
-        "signup",
+        "signups",
         "distributed",
-        "setup",
+        "setups",
         "online"
     ],
     "TimePeriods": [

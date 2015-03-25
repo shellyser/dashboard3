@@ -2,28 +2,20 @@ angular.module('dashApp')
 .directive('distributedgraph', function ($timeout) {
   return {
     restrict: 'A',
-    link: function postLink(scope, elem, attrs) {
-<<<<<<< HEAD
-  
+    link: function postLink(scope, elem, attrs) {  
       scope.$watch('graph', function() {
         $timeout(function() {
             populateGraph();
           })
       }, true);
-=======
-        scope.$watch('graph', function() {
-          $timeout(function() {
-              populateGraph();
-            })
-        }, true);
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
+
 
       function populateGraph(){
         var canvas = elem[0];
         var canvasId = elem.attr("id");
         animate = ANIMATE_GRAPH,
         points = [],
-<<<<<<< HEAD
+        allOptionsUnchecked = false,
         width = elem.closest('.module').css('width');
         
         //set canvas to width of parent
@@ -40,24 +32,7 @@ angular.module('dashApp')
                 points.push(scope.graph[datasets].datasets);
               }
                 
-=======
-        allOptionsUnchecked = false,
-        width = elem.closest('.module').css('width');
-        //set canvas to width of parent
-        elem.attr("id", canvasId).css('width',width); 
-
-        //eliminates any existing instance of Chart
-        for (var instance in Chart.instances){
-          if (Chart.instances[instance].chart.canvas.id === canvasId){
-            Chart.instances[instance].destroy();
-          }
-        }
-         
-        for (var datasets in scope.graph){
-          points.push(scope.graph[datasets].datasets);
-        }
-
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
+ 
         var autosize = false,
         dataForGraphing = [],
         animate = true,
@@ -77,7 +52,6 @@ angular.module('dashApp')
         fillColor = color.replace(')', ', 0.3)');
         lineColor = color.replace(')', ', 1)');
 
-<<<<<<< HEAD
         for (var pointSet in points){ 
           var checkbox;
           if (points.length == 1){
@@ -100,19 +74,6 @@ angular.module('dashApp')
           newLineColor = newFillColor.replace('.35', '1'),
           pointSetCheck = elem.closest('.module-body')
           .find('.module-view-options-checkbox label:eq(' + checkbox + ')');
-=======
-        for (var pointSet in points){
-          var factor = -55,
-          difference = 0,
-          differenceIsSignificant = true,
-          r = parseInt(fillColor.split(',')[0].split('(')[1]) + factor*pointSet,
-          g = parseInt(fillColor.split(',')[1]) + factor*pointSet,
-          b = parseInt(fillColor.split(',')[2]) + factor*pointSet,
-          newFillColor = 'rgba(' + r + ', ' + g + ', ' + b + ', 0.3)',
-          newLineColor = newFillColor.replace('0.3', '1'),
-          pointSetCheck = elem.closest('.module-body')
-          .find('.module-view-options-checkbox:eq(' + pointSet + ')');
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
           dataForGraphing.push({
             data: points[pointSet].data,
             fillColor: newFillColor,
@@ -120,11 +81,7 @@ angular.module('dashApp')
             pointStrokeColor: newLineColor,
             pointColor: 'rgba(240, 240, 240, 1)'
           });
-<<<<<<< HEAD
           pointSetCheck.css('color', newLineColor);
-=======
-          pointSetCheck.find('label').css('color', newLineColor);
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
           // construct total and max of data
           for (i in points[pointSet].data){
             if ((parseInt(pointSet) === 0) && (parseInt(i) === 0)){

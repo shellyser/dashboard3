@@ -6,10 +6,7 @@ angular.module('dashApp')
 	$scope.distributedparams.deliverySelected = $scope.deliveries[0];
 	$scope.statuses = ['delivered', 'shipped'];
 	$scope.statusSelected = ['delivered', 'shipped'];
-<<<<<<< HEAD
 	$scope.count = { total: 0 };
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 	$scope.noData = false;
 	$scope.displayData = function(){
 		if ($scope.noData){
@@ -61,10 +58,7 @@ angular.module('dashApp')
 	  					dailyTotal = 0,
 				 		graphDataArray = [];
   						parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
   						parseMapData(result);
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
   						$scope.noData = false;
   				})
   			} else {
@@ -75,10 +69,7 @@ angular.module('dashApp')
 	  					dailyTotal = 0,
 				 		graphDataArray = [];
   						parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
   						parseMapData(result);
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
   						$scope.noData = false;
   				})
   			}
@@ -91,11 +82,8 @@ angular.module('dashApp')
   					dailyTotal = 0,
 			 		graphDataArray = [];
   					parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
   					parseMapData(result);
   					$scope.noData = false;
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
   			})
   		} 
   		else {
@@ -157,12 +145,8 @@ angular.module('dashApp')
 	  					dailyTotal = 0,
 					 		graphDataArray = [];
 	  					parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
 	  					parseMapData(result);
 	  					$scope.noData = false;
-
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 	  			})
  	 		} else {
  	 			DistributedModel.getDistributed(config)
@@ -172,11 +156,8 @@ angular.module('dashApp')
 	  					dailyTotal = 0,
 					 		graphDataArray = [];
  	 					parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
  	 					parseMapData(result);
  	 					$scope.noData = false;
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
  				})
  	 		}
  		};             
@@ -224,11 +205,8 @@ angular.module('dashApp')
 	  					dailyTotal = 0,
 					 		graphDataArray = [];
  	 					parseGraphData(result, graphDataArray, dailyTotal, cumulativeTotal);
-<<<<<<< HEAD
  	 					parseMapData(result);
  	 					$scope.noData = false;
-=======
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
  	 				})
  		};             
 	}, true);
@@ -252,12 +230,7 @@ angular.module('dashApp')
 				counter = 0,
 				cumulativeCounter = 0,
 				selectedYear = $scope.year;
-				
-<<<<<<< HEAD
 			if (params.commTypeSelected.length == 0){
-=======
-			if (params.commTypeSelected.length === 0){
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 				$scope.noData = true;
 			}
 			else{
@@ -339,7 +312,6 @@ angular.module('dashApp')
 
 	}
 
-<<<<<<< HEAD
 	function parseMapData(data){
 			var markers = [],
 				points = [],
@@ -389,13 +361,4 @@ angular.module('dashApp')
 			}
 			$scope.map = mapData;
 		}
-=======
-	//no data for this module -- don't draw a graph.
-	// function noData(){
-	// 	elt.parent().hide();
-	// 	showGraphArea(false);
-	// 	elt.closest('.module-body').find('.module-body-stat').text('\u2014');
-	// 	elt.closest('.module-body').prev().find('.module-stat').text('\u2014');
-	// }
->>>>>>> fdf006905a21e8070bc3f3fe9802dbf9b1a971be
 });

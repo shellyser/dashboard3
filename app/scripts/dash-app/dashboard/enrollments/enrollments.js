@@ -1,10 +1,10 @@
 angular.module('dashboard.enrollments', [
 	'dashboard.enrollments.distributed',
-	'dashboard.enrollments.signups',
 	'dashboard.enrollments.setups',
 	'dashboard.enrollments.online',
-	'dashApp.models.dashboard',
-	'dashApp.models.enrollments'
+	'dashboard.enrollments.signups',
+	'dashApp.models.enrollments',
+	'dashApp.models.dashboard'
 ])
 
 	.config(function($stateProvider){
@@ -13,7 +13,7 @@ angular.module('dashboard.enrollments', [
 			    url: 'enrollments',
 			    views: {
 			        'content@': {
-			            templateUrl: 'scripts/dashboard/enrollments/enrollments.tmpl.html',
+			            templateUrl: 'scripts/dash-app/dashboard/enrollments/enrollments.tmpl.html',
 			            controller: 'EnrollmentCtrl',
 			            resolve: {
 			                enrollmentData: function(Enrollmentdata){
@@ -21,6 +21,22 @@ angular.module('dashboard.enrollments', [
 			                        return EnrollmentData.$promise;
 			                }
 			            }              
+			        },
+			        'signups@dashApp.dashboard.enrollments':{
+			        	templateUrl: 'scripts/dash-app/dashboard/enrollments/signups/signups.html',
+			        	controller: 'SignupCtrl'
+			        },
+			        'setups@dashApp.dashboard.enrollments':{
+			        	templateUrl: 'scripts/dash-app/dashboard/enrollments/setups/setups.html',
+			        	controller: 'SetupCtrl'
+			        },
+			        'distributed@dashApp.dashboard.enrollments':{
+			        	templateUrl: 'scripts/dash-app/dashboard/enrollments/distributed/distributed.html',
+			        	controller: 'DistributedCtrl'
+			        },
+			        'online@dashApp.dashboard.enrollments':{
+			        	templateUrl: 'scripts/dash-app/dashboard/enrollments/online/online.html',
+			        	controller: 'OnlineCtrl'
 			        }
 			    }           
 			})
@@ -96,10 +112,10 @@ angular.module('dashboard.enrollments', [
 
 
 
-	.controller('EnrollmentCtrl',  function ($scope, enrollmentData, user, $rootScope, $cacheFactory) {
-		var cache = $cacheFactory('enrollmentCache');
+	.controller('EnrollmentCtrl',  function ($scope, enrollmentData, user, $rootScope, $cacheFactory, $state) {
+		// var cache = $cacheFactory('enrollmentCache');
 
-		if (cache.get('params') === undefined) {
+		// if (cache.get('params') === undefined) {
 			
 		
 		var date = 7;
@@ -161,10 +177,10 @@ angular.module('dashboard.enrollments', [
 		  
 			$scope.drawGraph = {};
 
-		}
-		else{
-			cache.put('params', $scope.params);
-		}
+		// }
+		// else{
+		// 	cache.put('params', $scope.params);
+		// }
 		
 
 	})
