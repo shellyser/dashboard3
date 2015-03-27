@@ -8,11 +8,11 @@
 			<span class="show-hide-btn trigger fa fa-cog hide-large" trigger trigger-target="main-utils" trigger-closed-class="fa-cog" trigger-open-class="fa-cog" title="Settings"></span>
 			<span>
 				<div date-range-input id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-					<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
 					<span></span> <b class="caret"></b>
 				</div>
 			</span>
 		</div>
+		<span><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
 		<div class="main-utils drawer closed" id="main-utils">
 			<div class="main-utils-options-wrap">
 				<select class="main-utils-options" ng-model="params.viewtype" ng-options="view for view in enrollment.ViewTypes">
@@ -32,3 +32,5 @@
 		</ul>
 	</div>
 </div>
+
+

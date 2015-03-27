@@ -3,7 +3,7 @@ angular.module('dashApp.models.drevents', [
   ])
   
 	.service('DreventsModel', function ($http, $q) {
-		var model = this;
+		var model = this,
 			URLS = {
 				FETCH: 'data/drevents.json'
 			},
@@ -19,24 +19,24 @@ angular.module('dashApp.models.drevents', [
 			return categories;
 		}
 
-		model.getDrevents = function(){
-			return (drevents) ? $q.when(drevents) : $http.get(URLS.FETCH).then(cacheDrevents);
-		};
+		// model.getDrevents = function(){
+		// 	return (drevents) ? $q.when(drevents) : $http.get(URLS.FETCH).then(cacheDrevents);
+		// };
 
-		model.setCurrentDrevent = function(dreventDate){
-			return model.getDreventByDate(dreventDate)
-				.then(function(drevent){
-					currentDrevent = category;
-				});
-		};
+		// model.setCurrentDrevent = function(dreventDate){
+		// 	return model.getDreventByDate(dreventDate)
+		// 		.then(function(drevent){
+		// 			currentDrevent = category;
+		// 		});
+		// };
 
-		model.getCurrentDrevent = function(){
-			return currentCategory;
-		};
+		// model.getCurrentDrevent = function(){
+		// 	return currentCategory;
+		// };
 
-		model.getCurrentDreventDate = function(){
-			return currentDrevent ? currentDrevent : '' ;
-		};
+		// model.getCurrentDreventDate = function(){
+		// 	return currentDrevent ? currentDrevent : '' ;
+		// };
 
 		model.getDreventByDate = function (dreventDate){
 			var deferred = $q.defer();

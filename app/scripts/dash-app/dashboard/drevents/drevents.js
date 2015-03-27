@@ -2,7 +2,7 @@ angular.module('dashboard.drevents', [
 	'dashApp.models.dashboard',
 	'dashApp.models.drevents',
 	'dashboard.drevents.create',
-	'dashboard.drevents.edit'
+	// 'dashboard.drevents.edit'
 ])
 	.config(function($stateProvider){
 		$stateProvider
@@ -17,13 +17,13 @@ angular.module('dashboard.drevents', [
 		})
 	})
 
-	.controller('DreventsCtrl',  function (DreventsModel) {
+	.controller('DreventsListCtrl',  function (DreventsModel) {
 		var dreventsListCtrl = this;
 
-		DreventsModel.getDrevents()
-			.then(function(drevents){
-				dreventsListCtrl.drevents = drevents;
-			})
+		// DreventsModel.getDrevents()
+		// 	.then(function(drevents){
+		// 		dreventsListCtrl.drevents = drevents;
+		// 	})
 
 	})
 ;

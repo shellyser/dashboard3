@@ -21,5 +21,22 @@ angular.module('dashApp.models.enrollments', [
 		model.getEnrollments = function(){
 			return $http.get(URLS.FETCH).then(cacheEnrollments);
 		}
-	})      
+	})    
+
+		.factory('Enrollmentdata', ['$resource', function ($resource) {
+	    return $resource('/data/enrollment/:enrollmentController'+'.json', 
+	      {
+	      enrollmentController: "@enrollmentController"
+	      },
+	      {
+	        'enrollment': { 
+	          method: 'GET', 
+	          params:{
+	            enrollmentController: "enrollment"
+	          },
+	          isArray: false
+	        }
+	      });
+	}])      
+
 ;
