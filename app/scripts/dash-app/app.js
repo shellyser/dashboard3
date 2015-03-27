@@ -15,7 +15,8 @@
      'ngResource', 
      'ui.bootstrap',
      'dashboard', 
-     'dashboard.enrollments', 
+     'dashboard.enrollments',
+     'dashboard.drevents' 
  ])
 
      .config(function($stateProvider, $urlRouterProvider){

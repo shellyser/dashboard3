@@ -201,7 +201,7 @@ angular.module('dashboard.enrollments.online', [])
 					for (var key in deviceData[dataset]){
 						points.push(deviceData[dataset][key]);
 					}
-				}else{
+				} else{
 					var i = 0;
 					for(var key in deviceData[dataset]){
 						points[i].value += deviceData[dataset][key].value;
@@ -235,7 +235,7 @@ angular.module('dashboard.enrollments.online', [])
 				function populateGraph(){
 					var canvas = elem[0];
 					var canvasId = elem.attr("id");
-					animate = ANIMATE_GRAPH,
+					// animate = ANIMATE_GRAPH,
 					allOptionsUnchecked = false,
 					width = elem.closest('.module').css('width');
 					//set canvas to width of parent
@@ -243,11 +243,10 @@ angular.module('dashboard.enrollments.online', [])
 
 					//eliminates any existing instance of Chart
 					for (var instance in Chart.instances){
-		            	if (Chart.instances[instance].chart.canvas.id === canvasId){
-		            		Chart.instances[instance].destroy();
-		            	}
-		            }
-		            	
+		            			if (Chart.instances[instance].chart.canvas.id === canvasId){
+				            		Chart.instances[instance].destroy();
+				            	}
+					}
 					var autosize = false,
 					animate = false,
 					labels = scope.graph.labels,
