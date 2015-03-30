@@ -1,0 +1,197 @@
+/* These mixins handle IE < 9, which doesn't respond to media queries.
+ * To "activate" them in ye-olde-ie stylesheet, set $dim to NUMpx and
+ * set $ye-olde-ie to a version number and then import the main stylesheet. */
+
+// generates media queries based on min screen width, or straight css if $dim
+
+$dim: false !default;
+
+@mixin break-min($width) {
+  @if $dim {
+    @if $dim >= $width {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin break-max($width) {
+  @if $dim {
+    @if $dim < $width - 1 {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width: $width - 1) {
+      @content;
+    }
+  }
+}
+
+@mixin break-between($min, $max) {
+  @if $dim {
+    @if $dim >= $min {
+      @if $dim < $max {
+        @content;
+      }
+    }
+  }
+  @else {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+// generates css iff is for archaic IE stylesheet. Can generate for specific IE versions.
+// this might be rendered obselete if I add in Modernizr, but at least it's a nice thought.
+
+$ye-olde-ie: false !default;
+
+@mixin ye-olde-ie($version) {
+  @if $ye-olde-ie {
+    @if $ye-olde-ie == $version {
+      @content;
+    }
+  }
+}
+
+// pixel-density-related media queries
+@mixin min-res($res) {
+  @media (-webkit-min-device-pixel-ratio: $res) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+  @media (min--moz-device-pixel-ratio: 2) {
+    @content;
+  }
+  @media (-o-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+// for touch/no-touch elements
+.touch {
+  .touch-not {
+    display: none;
+  }
+}
+
+.no-touch {
+  .touch-only {
+    display: none;
+  }
+}
+
+// cross-browser-compatible pseudo-elements (ieb/iea are designed to be used with https://github.com/kevindees/ie7_pseudo_elements to generate pseudo pseudo-elements for IE7)
+@mixin before {
+  &::before {
+    @content;
+  }
+  &:before {
+    @content;
+  }
+  > ieb {
+    @content;
+  }
+}
+
+@mixin after {
+  &::after {
+    @content;
+  }
+  &:after {
+    @content;
+  }
+  > iea {
+    @content;
+  }
+}
+
+//I'm removing bg images from selects entirely until FF30 has a non-hacky way to remove dropdown arrows.
+@mixin reset-select-appearance {
+  @-moz-document url-prefix() {
+    background-image: none;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+// to handle some browser compatility stuff that Compass doesn't already do.
+@mixin reset-input-appearance {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+}
+
+@mixin flex($wrap: wrap, $justify: space-between) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex: 0 1 auto;
+  -moz-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -moz-flex-direction: row;
+  -moz-flex-wrap: wrap;
+  -moz-flex-flow: row wrap;
+  -moz-flex-direction: row;
+  -moz-flex: 1 1 100%;
+  -ms-flex-wrap: $wrap;
+  -moz-flex-flow: row $wrap;
+  -webkit-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+  -ms-flex-pack: justify;
+  -moz-justify-content: center;
+  -webkit-justify-content: $justify;
+  justify-content: $justify;
+}
+
+@mixin placeholder-text($color, $size) {
+  &::-webkit-input-placeholder {
+    @if $color {
+      color: $color;
+    }
+    @if $size {
+      font-size: $size;
+    }
+  }
+  &:-moz-placeholder {
+    @if $color {
+      color: $color;
+    }
+    @if $size {
+      font-size: $size;
+    }
+  }
+  &::-moz-placeholder {
+    @if $color {
+      color: $color;
+    }
+    @if $size {
+      font-size: $size;
+    }
+  }
+  &:-ms-input-placeholder {
+    @if $color {
+      color: $color;
+    }
+    @if $size {
+      font-size: $size;
+    }
+  }
+}

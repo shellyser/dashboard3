@@ -60,57 +60,65 @@ angular.module('dashboard.enrollments', [
 		date = enrollmentData.DateSpan;
 		}
 
-			var endDate = moment().endOf('day').subtract(1, 'days').format("MM/DD/YYYY"),
-				   startDate = moment().startOf('day').subtract(7, 'days').format("MM/DD/YYYY");
-			
-			$scope.dates = {};
-			$scope.dates = {
-				endDate:  endDate,
-				startDate: startDate,
-			};
+		var endDate = moment().endOf('day').subtract(1, 'days').format("MM/DD/YYYY"),
+			startDate = moment().startOf('day').subtract(7, 'days').format("MM/DD/YYYY");
+		
+		$scope.dates = {};
+		$scope.dates = {
+			endDate:  endDate,
+			startDate: startDate,
+		};
 
-			var communication = $scope.enrollment.CommunicationTypes;
-			$scope.year = $scope.enrollment.TimePeriods[0];
-			$scope.params = {};
-			$scope.params.viewtype = $scope.enrollment.ViewTypes[0];
-			$scope.params.product = $scope.enrollment.Products[0];
-			$scope.radiobutton = $scope.enrollment.ViewForms[0];
-			$scope.params.commTypeSelected = [];
-			$scope.params.dates = $scope.dates;
+		var communication = $scope.enrollment.CommunicationTypes;
+		$scope.year = $scope.enrollment.TimePeriods[0];
+		$scope.params = {};
+		$scope.params.viewtype = $scope.enrollment.ViewTypes[0];
+		$scope.params.product = $scope.enrollment.Products[0];
+		$scope.radiobutton = $scope.enrollment.ViewForms[0];
+		$scope.params.commTypeSelected = [];
+		$scope.params.dates = $scope.dates;
 
-			for (var i in communication){
-				$scope.params.commTypeSelected.push(communication[i]);
-			}
+		$scope.setView = function(action) {
+		  $scope.params.viewtype = action;
+		};
 
-			var updateSelected = function(action, communicationType) {
-			  if (action === 'add' && $scope.params.commTypeSelected.indexOf(communicationType) === -1) {
-			    $scope.params.commTypeSelected.push(communicationType);
-			  }
-			  if (action === 'remove' && $scope.params.commTypeSelected.indexOf(communicationType) !== -1) {
-			    $scope.params.commTypeSelected.splice($scope.params.commTypeSelected.indexOf(communicationType), 1);
-			  }
-			};
+		$scope.setProduct = function(action) {
+		  $scope.params.product = action;
+		};
 
-			$scope.updateSelection = function($event, communicationType) {
-			  var checkbox = $event.target;
-			  var action = (checkbox.checked ? 'add' : 'remove');
-			  updateSelected(action, communicationType);
-			};
+		for (var i in communication){
+			$scope.params.commTypeSelected.push(communication[i]);
+		}
 
-			$scope.isSelected = function(communicationType) {
-		  	return ($scope.params.commTypeSelected.indexOf(communicationType) >= 0);
-			};
+		var updateSelected = function(action, communicationType) {
+		  if (action === 'add' && $scope.params.commTypeSelected.indexOf(communicationType) === -1) {
+		    $scope.params.commTypeSelected.push(communicationType);
+		  }
+		  if (action === 'remove' && $scope.params.commTypeSelected.indexOf(communicationType) !== -1) {
+		    $scope.params.commTypeSelected.splice($scope.params.commTypeSelected.indexOf(communicationType), 1);
+		  }
+		};
 
-			if ($scope.enrollment.Products.indexOf('Customer') < 0 && $scope.enrollment.Products.indexOf('customer') < 0){
-				$scope.enrollment.Products.push('Customer');
-			 }
-		  
-			$scope.drawGraph = {};
+		$scope.updateSelection = function($event, communicationType) {
+		  var checkbox = $event.target;
+		  var action = (checkbox.checked ? 'add' : 'remove');
+		  updateSelected(action, communicationType);
+		};
 
-		// }
-		// else{
-		// 	cache.put('params', $scope.params);
-		// }
+		$scope.isSelected = function(communicationType) {
+	  	return ($scope.params.commTypeSelected.indexOf(communicationType) >= 0);
+		};
+
+		if ($scope.enrollment.Products.indexOf('Customer') < 0 && $scope.enrollment.Products.indexOf('customer') < 0){
+			$scope.enrollment.Products.push('Customer');
+		 }
+	  
+		$scope.drawGraph = {};
+
+	// }
+	// else{
+	// 	cache.put('params', $scope.params);
+	// }
 		
 
 	})
@@ -141,7 +149,7 @@ angular.module('dashboard.enrollments', [
 		           'This Month': [moment().startOf('month'), moment().endOf('month')],
 		           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
 		        },
-		        opens: 'left',
+		        opens: 'right',
 		        buttonClasses: ['btn', 'btn-sm'],
 		        applyClass: 'btn-primary',
 		        cancelClass: 'btn-default',

@@ -1,0 +1,248 @@
+header {
+  &.global {
+    @include container;
+    padding-left: 0.75em;
+    padding-right: gutter(10);
+    width: 100%;
+    background-color: $blue;
+    color: $white;
+    overflow: hidden;
+    min-height: 56px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+  }
+}
+
+.global-wrap {
+  margin: 0.5rem 0 0.5rem 0;
+  @include break-min($global-goodies-break) {
+    position: relative;
+  }
+}
+
+.global-select {
+  float: left;
+  > a {
+    border: none;
+  }
+}
+
+.global-goodies {
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: right;
+  margin-right: 0.5rem;
+  @include break-min($global-user-break) {
+    float: right;
+    display: inline-block;
+    > span {
+      display: block;
+      &:not(:last-child) {
+        margin-bottom: 0.5em;
+        display:block {}
+      }
+      &:last-child {
+        display:block {}
+      }
+    }
+  }
+
+  @include break-min($global-goodies-break) {
+    margin-top: 10px;
+    > span {
+      display: inline-block;
+      &:not(:first-child) {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.global-logo {
+  display: inline-block;
+  width: 114px;
+  margin-bottom: 0.5rem;
+  @include break-min($global-time-break) {
+    margin-bottom: 0;
+  }
+
+  @include break-min($main-header-break) {
+    margin-left: 1rem;
+  }
+
+  > img {
+    top: 0;
+    left: 0;
+    width: 120px;
+    border: 0;
+  }
+}
+
+.global-year, .global-time {
+  font-size: 1.2rem;
+  @include break-min($global-time-break) {
+    display: inline-block;
+    padding-left: 0.5rem;
+  }
+}
+
+.global-time {
+  > span {
+    padding-left: 0.25em;
+    &:first-child {
+      @include after {
+        content: "|";
+        padding: 0 0 0 0.25em;
+        display: inline-block;
+        color: $global-header-text-alt-color;
+      }
+    }
+    &:not(.active) {
+      color: $global-header-text-alt-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.global-goodies-user {
+  display: inline-block;
+  width: 5rem;
+  @include break-min($global-user-break) {
+    width: 10rem;
+    @include after {
+      content: " ";
+      margin-right: 0.1rem;
+    }
+  }
+}
+
+.global-goodies-location {
+  display: none;
+  @include break-min($global-user-break);
+}
+
+.global-user {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-style: normal;
+  float: right;
+  @include transition-property(color);
+  @include transition-duration(0.3s);
+  > .fa {
+    font-size: 3rem;
+    margin-left: 0.5rem;
+    @include break-min($main-header-break) {
+      display: none;
+    }
+  }
+  &:hover {
+    color: $global-header-link-color;
+  }
+  @include break-min($global-user-break) {
+    display: inline-block;
+    font-size: 1em;
+    font-style: italic;
+    text-decoration: underline;
+    @include after {
+      content: "!";
+    }
+  }
+}
+
+.global-utils {
+  z-index: 1;
+  background-color: black(0.3);
+  @include break-min($global-util-break) {
+    text-align: right;
+  }
+
+  @include break-min($global-util-menu-break) {
+    position: absolute;
+    right: 0.25rem;
+    margin-top: -0.25rem;
+    background-color: #222222;
+    @include border-radius(2px);
+    @include before {
+      border-color: transparent transparent #222222;
+    }
+  }
+
+  @include break-min($global-user-break) {
+    margin-top: 0;
+    top: 2.5rem;
+  }
+
+  @include break-min($global-goodies-break) {
+    top: 4rem;
+    right: 9rem;
+  }
+}
+
+.global-util {
+  text-align: center;
+  @include box-sizing(border-box);
+  cursor: pointer;
+  font-size: 1rem;
+  @include break-min($global-util-break) {
+    width: auto;
+  }
+
+  > a {
+    text-decoration: none;
+    width: 95%;
+    color: $global-header-text-color;
+    @include border-radius(2px);
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    @include transition-property(background-color);
+    @include transition-duration(0.2s);
+    border-bottom: white(0.2) 1px solid;
+    &:hover {
+      background-color: $light-blue;
+    }
+    &:focus {
+      outline: none;
+      color: $light-blue;
+    }
+  }
+}
+
+.global-general:first-of-type {
+  > a {
+    border-top: $white 2px solid;
+  }
+}
+
+.global-sidebar {
+  @include break-min($main-header-break) {
+    display: none;
+  }
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  color: $white;
+  float: left;
+  &:active, &:hover, &:focus {
+    outline: none;
+  }
+  .fa {
+    font-size: 2.2rem;
+  }
+  @include break-min($main-header-break) {
+    .fa {
+      display: inline-block;
+      float: left;
+    }
+  }
+}
+
+.global-goodies > span {
+  &.extra {
+    @include break-max($global-goodies-break) {
+      display: none;
+    }
+  }
+}

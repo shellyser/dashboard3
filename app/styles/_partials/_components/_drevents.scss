@@ -1,0 +1,123 @@
+#drevents {
+  .modules {
+    .module-title {
+      width: 50%;
+      @include break-min($main-break) {
+        width: 60%;
+      }
+    }
+    .module-body {
+      padding: 0rem;
+      .module-controls {
+        height: 6rem;
+        padding-left: 1em;
+        img {
+          width: 100%;
+        }
+      }
+      .module-grapharea {
+        padding: 0rem;
+        height: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .view-events {
+      @include clearfix;
+      @include container;
+      .past-events {
+        @include break-min($module-break) {
+          @include span(2 of 8 last);
+          @include clearfix;
+          height: 100%;
+          .module {
+            &#past, &#callable {
+              @include break-min($module-break);
+              @include span(2 of 2);
+              .module-header {
+                background-color: $dark-grey-3;
+                color: $white;
+                .module-title {
+                  width: 100%;
+                }
+              }
+            }
+            &#past {
+              margin-bottom: gutter(2);
+              .module-body {
+                padding: 1rem;
+              }
+            }
+            &#callable {
+              .module-grapharea {
+                background-color: $light-grey;
+              }
+            }
+          }
+        }
+      }
+      .module {
+        &#scheduled {
+          @include break-min($module-break) {
+            @include span(6 of 8);
+            margin-right: -100%;
+          }
+        }
+      }
+    }
+    .create-events {
+      @include container;
+      @include clearfix;
+      .module {
+        .module-body {
+          padding: 0em 1em;
+        }
+        &#create {
+          @include break-min($module-break) {
+            @include span(10 of 10);
+            @include clearfix;
+            .col {
+              @include span(2 of 10);
+            }
+            .col:last-of-type {
+              @include span(2 of 10 last);
+            }
+          }
+        }
+      }
+    }
+  }
+  #scheduled {
+    .module-header {
+      em {
+        text-align: right;
+        font-style: normal;
+      }
+      span.date {
+        display: none;
+        font-size: 1.5rem;
+        line-height: 2em;
+        @include break-min($settings-break) {
+          display: inline;
+          font-size: 1.5rem;
+          line-height: 2em;
+          padding-left: 1em;
+        }
+
+        @include break-min($module-break2) {
+          padding-left: 6em;
+        }
+      }
+    }
+    .module-body {
+      padding-bottom: 3.55em;
+    }
+  }
+}
+
+#past {
+  .module-title {
+    width: 100%;
+  }
+}

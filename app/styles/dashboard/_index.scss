@@ -1,0 +1,16 @@
+@import "enrollment";
+@import "elements";
+
+main {
+	@include clearfix;
+	@include container;
+	padding: gutter(10);
+	@include calc(width, "100% - 8.1rem");
+	position: absolute;
+	@include transition(width, 1s);
+	right: 0;
+	&.collapse {
+	  @include calc(width, "100% - 8.1rem + 4rem");
+	}
+}
+

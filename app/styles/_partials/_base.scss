@@ -1,0 +1,15 @@
+body {
+  @include border-box-sizing;
+  background-color: $main-bg-color;
+}
+
+main {
+  display: block;
+}
+
+.container {
+  display: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 56px;
+}

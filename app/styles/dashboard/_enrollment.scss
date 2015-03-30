@@ -1,0 +1,25 @@
+#enrollment {
+	.filters{
+		span {
+			display: inline-block;
+		}
+		div[class^="col"]:last-of-type{
+			text-align: right;
+			input[type="checkbox"]{
+				display: none;
+			}
+			input[type="checkbox"]:not(:checked) ~ em{
+				font-weight: normal;
+			}
+			label{
+				padding-left: .5rem;
+				em{
+					font-style: normal;
+				}
+			}
+			.btn-group{
+				margin-left: .5rem;
+			}
+		}
+	}
+}

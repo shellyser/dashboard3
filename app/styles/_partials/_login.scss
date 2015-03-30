@@ -1,0 +1,182 @@
+.login {
+  background-color: $blue;
+  @include box-sizing(border-box);
+  padding: 10% 1rem 2rem 1rem;
+  @include box-shadow(rgba(0, 0, 0, 0.3) 0 0 12px);
+  margin-bottom: 3rem;
+  min-height: 80%;
+}
+
+.login-wrap {
+  width: 100%;
+  margin: auto;
+  max-width: 16rem;
+  @include box-sizing(border-box);
+  overflow: hidden;
+  position: relative;
+}
+
+.login-int {
+  width: 200%;
+}
+
+.login-int-wrap {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+#login-2 {
+  opacity: 0;
+}
+
+.login-form {
+  input {
+    @include reset-input-appearance;
+    font-family: "PT Sans", sans-serif;
+    font-size: 1rem;
+    @include border-radius(0);
+    &[type="email"], &[type="password"] {
+      font-size: 1.2rem;
+      width: 100%;
+      border: 0;
+      margin: 0;
+      padding: 0.5em;
+      color: $text-color;
+      @include placeholder-text($med-grey-2, 1.2rem);
+      &:focus {
+        outline: none;
+        @include placeholder-text($med-grey-3, 1.2rem);
+      }
+      &:first-of-type {
+        @include border-top-radius(2px);
+        border-bottom: solid 1px $light-blue-2;
+      }
+      &:nth-of-type(2) {
+        @include border-bottom-radius(2px);
+        border-top: solid 1px $blue;
+      }
+      &:only-of-type {
+        @include border-radius(2px);
+        border-bottom: 0;
+      }
+    }
+    &[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+      background-color: $white;
+      @include border-radius(2px);
+      margin: 0;
+      position: relative;
+      vertical-align: middle;
+      border: 0;
+      &:focus {
+        outline: none;
+      }
+      &:checked {
+        @include before {
+          content: "\000D7";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1rem;
+          height: 1rem;
+          text-align: center;
+          line-height: 1rem;
+          font-size: 1.3em;
+          color: $med-grey-3;
+        }
+      }
+    }
+    &[type="submit"] {
+      width: 100%;
+      background-color: white(0.4);
+      color: $white;
+      border: 0;
+      @include border-radius(2px);
+      font-size: 1.5rem;
+      padding: 0.3em;
+      cursor: pointer;
+      @include transition-property(background-color);
+      @include transition-duration(0.2s);
+      &:focus {
+        outline: none;
+        background-color: white(0.6);
+      }
+      &:hover {
+        background-color: white(0.6);
+      }
+    }
+  }
+  label {
+    vertical-align: middle;
+    padding-left: 0.5em;
+  }
+}
+
+.login-logo {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 2rem;
+}
+
+.placeholder {
+  .login-hide-label {
+    position: absolute;
+    top: -12rem;
+    left: -100rem;
+  }
+}
+
+.no-placeholder {
+  .login-hide-label {
+    display: block;
+    padding: 0.8rem 0 0.2rem 0;
+    font-size: 1.2rem;
+  }
+  .login-form {
+    input {
+      &[type="email"], &[type="password"] {
+        @include border-radius(0);
+      }
+    }
+  }
+}
+
+.form-wrap {
+  display: block;
+  margin: 1em 0;
+}
+
+.login-link {
+  display: block;
+  margin-top: 3em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.form-error-forgot {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-forgot {
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  a {
+    color: $text-color;
+  }
+}
+
+.form-login-error, .form-login-success {
+  h1, h2 {
+    text-align: left;
+  }
+  ul {
+    margin: 0 0 0.5rem 0;
+  }
+}
