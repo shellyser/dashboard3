@@ -16,6 +16,14 @@ angular.module('dashboard.enrollments.online', [
 	    	return $scope.noData;
 	    };
 
+	    $scope.setViewForm = function(action) {
+			$scope.radiobutton = action;
+		};
+
+		$scope.setDevices = function(action) {
+			$scope.onlineparams.deviceChosen = action;
+		};
+
 	     $scope.$watch('params', function(newValue, oldValue) {
 	    	if (newValue){
 	    		var params = {
@@ -218,7 +226,7 @@ angular.module('dashboard.enrollments.online', [
 					var canvasId = elem.attr("id");
 					// animate = ANIMATE_GRAPH,
 					allOptionsUnchecked = false,
-					width = elem.closest('.module').css('width');
+					width = elem.closest('.panel').css('width');
 					//set canvas to width of parent
 					elem.attr("id", canvasId).css('width',width); 
 
@@ -240,7 +248,7 @@ angular.module('dashboard.enrollments.online', [
 					total = 0,
 					lineColor,
 					fillColor,
-					color = elem.closest('.module').find('.module-header').css('color');
+					color = elem.closest('.panel').find('.panel-heading').css('color');
 
 					// graph colors are based on the color of the bar at the top of the module
 					color = color.replace('rgb', 'rgba');
@@ -360,7 +368,7 @@ angular.module('dashboard.enrollments.online', [
 					var newGraph = new Chart(ctx).Line(scope.graph, options);
 					showGraphArea();
 					// if (newGraph){
-					// 	elem.closest('.module-body').find('.module-loading').fadeOut();
+					// 	elem.closest('.panel-body').find('.module-loading').fadeOut();
 					// }
 				}
 
@@ -473,18 +481,18 @@ angular.module('dashboard.enrollments.online', [
 				function noData(){
 				  	elem.parent().hide();
 				  	showGraphArea(false);
-				  	elem.closest('.module-body').find('.module-body-stat').text('\u2014');
-				  	elem.closest('.module-body').prev().find('.module-stat').text('\u2014');
+				  	elem.closest('.panel-body').find('.panel-body-stat').text('\u2014');
+				  	elem.closest('.panel-body').prev().find('.panel-heading-stat').text('\u2014');
 				}
 
 				function showLoading(){
-					elem.closest('.module-body').find('.module-loading').fadeIn();
+					elem.closest('.panel-body').find('.module-loading').fadeIn();
 					elem.parent().fadeOut();
 					elem.parent().next().fadeOut();
 				}
 
 				function showGraphArea(data){
-					elem.closest('.module-body').find('.module-loading').fadeOut();
+					elem.closest('.panel-body').find('.module-loading').fadeOut();
 					if (data ===  true || data === undefined){
 						elem.parent().fadeIn();
 					}

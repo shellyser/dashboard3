@@ -1,4 +1,5 @@
 #enrollment {
+
 	.filters{
 		span {
 			display: inline-block;
@@ -19,6 +20,83 @@
 			}
 			.btn-group{
 				margin-left: .5rem;
+			}
+		}
+	}
+
+	.dash-content{
+		@include clearfix;
+		padding-left: 0px;
+		& .panel{
+			margin-bottom: gutter(10);
+			@include gallery(4 of 8);
+			height: 22rem;
+			> .panel-heading{
+				.panel-heading-stat{
+					display:none;
+				}
+				.btn-group{
+					float: right;
+				}
+			}
+			> .panel-body{
+				h2{
+					margin: 0px;
+					font-size: 2.5rem;
+					display: inline-block;
+				}
+				.panel-view-options{
+					display: inline-block;
+					float: right;
+				}
+			}
+		}
+		#signups{
+			color: $blue; 
+			.btn-switch{
+				background-color: $blue;
+			}
+
+		}
+		#distributed{
+			color: $yellow;
+			.btn-switch{
+				background-color: $yellow;
+			}
+			.btn.dropdown-toggle{
+				background-color: $dark-yellow;
+				color: $white;
+				border-color: $yellow;
+				padding: .1rem .5rem;
+				&:hover, &:active, &:focus{
+					background-color: $dark-yellow-2;
+					border-color: $dark-yellow;
+					color: $white;
+				}
+			}
+		}
+		#setups{
+			color: $orange;
+			.btn-switch{
+				background-color: $orange;
+			}
+		}
+		#online{
+			color: $red;
+			.btn-switch{
+				background-color: $red;
+			}
+			.btn.dropdown-toggle{
+				background-color: $dark-red;
+				color: $white;
+				border-color: $red;
+				padding: .1rem .5rem;
+				width: 10rem;
+				&:hover, &:active, &:focus{
+					background-color: $dark-red-2;
+					border-color: $dark-red;
+					color: $white;
+				}
 			}
 		}
 	}

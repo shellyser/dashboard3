@@ -25,3 +25,13 @@
 		font-size: 1rem;
 	}
 }
+
+.panel-default > .panel-heading {
+	color: inherit;
+	background-color: $white;
+	h3{
+		display: inline-block;
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+}

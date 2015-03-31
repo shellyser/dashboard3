@@ -12,5 +12,10 @@ main {
 	&.collapse {
 	  @include calc(width, "100% - 8.1rem + 4rem");
 	}
+
+	.page-header > h1{
+		margin: 0rem;
+		padding-bottom: gutter(8);
+	}
 }
 

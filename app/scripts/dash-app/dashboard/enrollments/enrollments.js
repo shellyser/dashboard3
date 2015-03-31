@@ -127,7 +127,7 @@ angular.module('dashboard.enrollments', [
 		return {
 		  restrict: 'A',
 		  link: function postLink(scope, elt, attrs) {
-		    elt.find('span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+		    elt.find('span').html(moment().subtract(29, 'days').format('MM/DD/YYYY') + ' - ' + moment().format('MM/DD/YYYY'));
 		     
 		    elt.daterangepicker({
 		        format: 'MM/DD/YYYY',

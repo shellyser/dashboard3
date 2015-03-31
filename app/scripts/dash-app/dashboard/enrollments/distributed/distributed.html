@@ -1,30 +1,35 @@
-<header class="module-header">
-    <h2 class="module-title">Distributed</h2>
-    <h2 class="module-stat"></h2>
-    <div class="btn-group">
-        <select ng-options="viewform for viewform in enrollment.ViewForms" value="{{ viewtype }}" ng-model="radiobutton"></select>
+<div class="panel-heading">
+  <h3 class="panel-title">Distributed</h3>
+  <h3 class="panel-heading-stat"></h3>
+  <div class="btn-group">
+    <label class="btn btn-switch" ng-model="radiobutton" ng-repeat="viewform in enrollment.ViewForms" btn-radio="'{{ viewform }}'" ng-click="setViewForm(viewform)">{{ viewform }}</label>
+  </div>
+</div>
+<div class="panel-body">
+  <div class="panel-controls">
+    <h2 class="panel-body-stat">{{ count.total }}</h2>
+    <div ng-show="params.product === 'AC' " class="panel-view-options">
+    <div class="btn-group panel-view-options-dropdown" dropdown>
+      <button type="button" class="btn btn-default dropdown-toggle" ng-click="submit()" dropdown-toggle>
+      {{ distributedparams.deliverySelected }}<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" ng-model="distributedparams.deliverySelected" role="menu">
+        <li ng-repeat="delivery in deliveries"><a ng-click="setDelivery(delivery)">{{ delivery }}</a></li>
+      </ul>
     </div>
-    <span class="module-expand-button trigger fa fa-expand"></span>
-</header>
-<div class="module-body">
-    <div class="module-controls">
-        <h2 class="module-body-stat">{{ count.total }}</h2>
-        <div class="module-view-options">
-          <select class="module-view-options-dropdown" ng-model="distributedparams.deliverySelected" ng-options="delivery for delivery in deliveries">
-          </select>
-          <div ng-show="distributedparams.deliverySelected === 'ViaPost' " class="module-view-options-checkbox">
-              <label ng-repeat="status in statuses">
-                  <input type="checkbox" class="checkbox-option" ng-checked="isStatusSelected(status)" ng-click="updateStatusSelection($event, status)" id="{{status}}" attr-dataset="{{status}}">{{status}}
-              </label>
-          </div>
-        </div>
+      <div ng-show="distributedparams.deliverySelected === 'ViaPost' " class="panel-view-options-checkbox">
+        <label ng-repeat="status in statuses">
+          <input type="checkbox" class="checkbox-option" ng-checked="isStatusSelected(status)" ng-click="updateStatusSelection($event, status)" id="{{status}}" attr-dataset="{{status}}">{{status}}
+        </label>
+      </div>
     </div>
-    <div class="module-loading"><span class="fa fa-circle-o-notch fa-spin loading-icon"></span></div>
-    <div class="module-grapharea">
-        <div class="graph-wrap" ng-switch on="radiobutton" ng-hide="displayData()" style="width:100%; height: 100%">
-          <canvas id="graph-distributed" distributedgraph graph-content="{{module}}" graph-num="3" ng-switch-when="Graph"></canvas>   
-          <div id="map-canvas" map map-content="{{module}}" map-num="{{$index + 1}}"  ng-switch-when="Map"></div> 
-        </div>
-        <div class="module-no-data" ng-show="displayData()">No data</div>
-    </div>
+  </div>
+  <div class="module-loading"><span class="fa fa-circle-o-notch fa-spin loading-icon"></span></div>
+  <div class="panel-grapharea">
+    <div class="graph-wrap" ng-switch on="radiobutton" ng-hide="displayData()" style="width:100%; height: 100%">
+      <canvas id="graph-distributed" distributedgraph graph-content="{{module}}" graph-num="3" ng-switch-when="Graph"></canvas>   
+        <div id="map-canvas" map map-content="{{module}}" map-num="{{$index + 1}}"  ng-switch-when="Map"></div> 
+      </div>
+    <div class="module-no-data" ng-show="displayData()"></div>
+  </div>
 </div>

@@ -14,9 +14,13 @@ angular.module('dashboard.enrollments.setups', [
 	    	}
 	    	return $scope.noData;
 	    };
+
+        $scope.setViewForm = function(action) {
+    	  $scope.radiobutton = action;
+    	};
+
 		var dailyTotal = 0,
 			cumulativeTotal = 0;
-
 
 	    var updateSelected = function(action, deviceType) {
 			if (action === 'add' && $scope.deviceSelected.indexOf(deviceType) === -1) {
@@ -311,7 +315,7 @@ angular.module('dashboard.enrollments.setups', [
 		}
 	})
 
-	.directive('setupgraph', function ($timeout) {
+	.directive('setupGraph', function ($timeout) {
 		return {
 			restrict: 'A',
 			link: function postLink(scope, elem, attrs) {
@@ -327,7 +331,7 @@ angular.module('dashboard.enrollments.setups', [
 					var canvasId = elem.attr("id"),
 					// animate = ANIMATE_GRAPH,
 					points = [],
-					width = elem.closest('.module').css('width');
+					width = elem.closest('.panel').css('width');
 					
 					//set canvas to width of parent
 					elem.attr("id", canvasId).css('width',width);  
@@ -355,7 +359,7 @@ angular.module('dashboard.enrollments.setups', [
 					total = 0,
 					lineColor,
 					fillColor,
-					color = elem.closest('.module').find('.module-header').css('color');
+					color = elem.closest('.panel').find('.panel-heading').css('color');
 
 					// graph colors are based on the color of the bar at the top of the module
 					color = color.replace('rgb', 'rgba');
@@ -365,7 +369,7 @@ angular.module('dashboard.enrollments.setups', [
 					for (var pointSet in points){	
 						var checkbox;
 						if (points.length == 1){
-							if (elem.closest('.module-body').find('.module-view-options-checkbox label:eq(0) input').attr("checked") === "checked"){
+							if (elem.closest('.panel-body').find('.panel-view-options-checkbox label:eq(0) input').attr("checked") === "checked"){
 								checkbox = 0;
 							}
 							else{
@@ -382,8 +386,8 @@ angular.module('dashboard.enrollments.setups', [
 						b = parseInt(fillColor.split(',')[2]) + factor*checkbox,
 						newFillColor = 'rgba(' + r + ', ' + g + ', ' + b + ', .35)',
 						newLineColor = newFillColor.replace('.35', '1'),
-						pointSetCheck = elem.closest('.module-body')
-						.find('.module-view-options-checkbox label:eq(' + checkbox + ')');
+						pointSetCheck = elem.closest('.panel-body')
+						.find('.panel-view-options-checkbox label:eq(' + checkbox + ')');
 						dataForGraphing.push({
 							data: points[pointSet].data,
 							fillColor: newFillColor,
@@ -603,18 +607,18 @@ angular.module('dashboard.enrollments.setups', [
 				function noData(){
 				  	elem.parent().hide();
 				  	showGraphArea(false);
-				  	elem.closest('.module-body').find('.module-body-stat').text('\u2014');
-				  	elem.closest('.module-body').prev().find('.module-stat').text('\u2014');
+				  	elem.closest('.panel-body').find('.panel-body-stat').text('\u2014');
+				  	elem.closest('.panel-body').prev().find('.panel-heading-stat').text('\u2014');
 				}
 
 				function showLoading(){
-					elem.closest('.module-body').find('.module-loading').fadeIn();
+					elem.closest('.panel-body').find('.module-loading').fadeIn();
 					elem.parent().fadeOut();
 					elem.parent().next().fadeOut();
 				}
 
 				function showGraphArea(data){
-					elem.closest('.module-body').find('.module-loading').fadeOut();
+					elem.closest('.panel-body').find('.module-loading').fadeOut();
 					if (data ===  true || data === undefined){
 						elem.parent().fadeIn();
 					}
