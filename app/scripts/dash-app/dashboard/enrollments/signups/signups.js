@@ -146,9 +146,11 @@ angular.module('dashboard.enrollments.signups', [
 					var canvasId = elem.attr("id");
 					// animate = ANIMATE_GRAPH,
 					allOptionsUnchecked = false,
-					width = elem.closest('.panel').css('width');
+					width = elem.closest('.panel').css('width'),
+					height = elem.closest('.panel').css('height');
 					//set canvas to width of parent
-					elem.attr("id", canvasId).css('width',width);  
+					elem.attr("id", canvasId).css('width',width);
+					elem.attr("id", canvasId).css('height',height);  
 
 					//eliminates any existing instance of Chart
 					for (var instance in Chart.instances){

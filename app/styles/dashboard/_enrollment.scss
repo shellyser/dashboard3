@@ -40,6 +40,7 @@
 				}
 			}
 			> .panel-body{
+				height: 20rem;
 				h2{
 					margin: 0px;
 					font-size: 2.5rem;
@@ -48,6 +49,9 @@
 				.panel-view-options{
 					display: inline-block;
 					float: right;
+				}
+				.panel-grapharea{
+					height: 13.5rem;
 				}
 			}
 		}
