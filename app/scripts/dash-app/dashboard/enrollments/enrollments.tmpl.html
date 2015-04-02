@@ -4,19 +4,14 @@
 	</div>  
 	<div class="panel panel-default filters">
 	  <div class="panel-body">
-		  <div class="row">
-    		<div class="col-md-5">
-    			<span class="fa fa-file show-hide-btn export-data" title="Export data as CSV" trigger trigger-target="export-data-modal" id="export-data-btn"></span>
-    			<span class="show-hide-btn trigger fa fa-cog hide-large" trigger trigger-target="main-utils" trigger-closed-class="fa-cog" trigger-open-class="fa-cog" title="Settings"></span>
-    			<span>
-    				<div date-range-input id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">    				<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-    					<span></span> <b class="caret"></b>
-    				</div>
-    			</span>
-    			<span></span>
-				</div>
+  		<div class="filter-group">
+  			<span class="btn btn-default"><i class="fa fa-file export-data" title="Export data as CSV" id="export-data-btn"></i></span>
+  			<span date-range-input id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc"><span></span> <i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+			</div>
 
-				<div class="col-md-7">
+			<div class="filter-group">
+				<div class="btn-filter" ng-click="isFilterOpen = !isFilterOpen"><span class=" btn btn-default"><i class="fa fa-filter" title="Settings"></i></span></div>
+				<div class="filter-options well" ng-show="isFilterOpen">
 	    		<div class="btn-group" dropdown is-open="status.isopen">
 	    			<button type="button" class="btn btn-primary dropdown-toggle" ng-click="submit()" dropdown-toggle>
 	    			{{ params.viewtype }}<span class="caret"></span>
@@ -36,11 +31,10 @@
 	    		</div>
 
 	  			<label ng-show="enrollment.CommunicationTypes.length > 1"  class="main-utils-gateways" ng-repeat= "commType in enrollment.CommunicationTypes">
-	  				<input type="checkbox" name="selectedComms[]" value="{{commType}}" ng-checked="isSelected(commType)" ng-click="updateSelection($event, commType)"><em>{{commType | capitalize }}</em>
+	  				<input type="checkbox" name="selectedComms[]" value="{{commType}}" ng-checked="isSelected(commType)" ng-click="updateSelection($event, commType)"><em>{{ commType | capitalize }}</em>
 	  			</label>
-
-	  		</div>
-			</div>
+				</div>
+  		</div>
 		</div>
 	</div>
 	
