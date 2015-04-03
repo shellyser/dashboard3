@@ -34,3 +34,7 @@
 		font-weight: 400;
 	}
 }
+
+.well{
+	@include radius(2px);
+}

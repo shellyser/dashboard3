@@ -12,11 +12,29 @@
 		.fa{
 			font-size: 1.25rem;
 		}
+		.btn.btn-default{
+			padding: .35rem .75rem;
+			background-color: black(0.2);
+			color: $text-color;
+			border-color: black(0.1);
+			&:hover, &:focus{
+				color: $white;
+				background-color: black(0.1);
+				@include box-shadow(inset 0 1px 1px black(0.05));
+				@include transition(.3s);
+			}
+		}
 		.filter-group:first-of-type{
 			float: left;
 			display: inline-block;
 			#reportrange{
-				margin-left: .5rem;
+				margin-left: .75rem;
+				cursor: pointer;
+				padding: 6.5px 10px;
+				border: 1px solid #e3e3e3;
+				background-color: #f5f5f5;
+				@include box-shadow(inset 0 1px 1px black(0.05));
+				@include radius(2px);
 				.fa.fa-calendar{
 					font-size: 1.25rem;
 					margin-left: 0.25rem;
@@ -54,9 +72,6 @@
 					margin: auto;
 					font-size: 1rem;
 				}
-			}
-			.btn.btn-default{
-				padding: .35rem .75rem;
 			}
 			.btn-filter{
 				display: inline-block;
@@ -143,11 +158,81 @@
 					color: $white;
 				}
 			}
+			ul.dropdown-menu{
+				right: 0;
+				left: inherit;
+			}
+			.panel-view-options-checkbox{
+				margin-right: 1.25rem;
+				%extend .label-legend;
+				#delivered{
+					color: $yellow;
+					span{
+						background: $yellow;
+					}
+					input:not(:checked) ~ span {
+						border: 2px solid $yellow;
+						background-color: $white;
+					}
+				}
+				#shipped{
+					color: $dark-yellow;
+					span{
+						background: $dark-yellow;
+					}
+					input:not(:checked) ~ span {
+						border: 2px solid $dark-yellow;
+						background-color: $white;
+					}
+				}
+			}
 		}
 		#setups{
 			color: $orange;
 			.btn-switch{
 				background-color: $orange;
+			}
+			.panel-view-options-checkbox{
+				margin-right: 1.25rem;
+				label{
+					position: relative;
+					display: block;
+					text-align: right;
+					margin-bottom: 0rem;
+					input[type="checkbox"]{
+						visibility: hidden;
+					}
+					span{
+						width: .75rem;
+						height: .75rem;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						margin: auto;
+						right: -1rem;
+						@include radius(2px);
+					}
+				}
+				#modlets{
+					color: $orange;
+					span{
+						background: $orange;
+					}
+					input:not(:checked) ~ span {
+						border: 2px solid $orange;
+						background-color: $white;
+					}
+				}
+				#thermostats{
+					color: $dark-orange;
+					span{
+						background: $dark-orange;
+					}
+					input:not(:checked) ~ span {
+						border: 2px solid $dark-orange;
+						background-color: $white;
+					}
+				}
 			}
 		}
 		#online{

@@ -18,8 +18,8 @@
       </ul>
     </div>
       <div ng-show="distributedparams.deliverySelected === 'ViaPost' " class="panel-view-options-checkbox">
-        <label ng-repeat="status in statuses">
-          <input type="checkbox" class="checkbox-option" ng-checked="isStatusSelected(status)" ng-click="updateStatusSelection($event, status)" id="{{status}}" attr-dataset="{{status}}">{{status}}
+        <label ng-repeat="status in statuses" id="{{status}}">
+          <input type="checkbox" class="checkbox-option" ng-checked="isStatusSelected(status)" ng-click="updateStatusSelection($event, status)"  attr-dataset="{{status}}"><span></span>{{status}}
         </label>
       </div>
     </div>

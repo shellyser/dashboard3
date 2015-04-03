@@ -1,4 +1,4 @@
-angular.module('dashboard.analytics', [
+    angular.module('dashboard.analytics', [
 	'dashApp.models.dashboard',
 	'dashApp.models.analytics'
 ])

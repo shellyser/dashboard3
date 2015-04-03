@@ -32,16 +32,16 @@
     <!--[if !IE]> -->
     <body>
     <!-- <![endif]-->
-        <div id="loading">
-          <span class="fa fa-circle-o-notch fa-spin loading-icon"></span>
-          <h1 class="loading-title">Loading</h1>
-          <h2>Refresh page if this message does not disappear</h2>
-        </div>
-        <div ui-view="header"></div>
-        <aside ui-view="sidebar" ng-class="toggle"></aside>
-        <main class="wrapper" ng-class="toggle">
-          <div ui-view="content"></div>
-        </main>
+      <div id="loading">
+        <span class="fa fa-circle-o-notch fa-spin loading-icon"></span>
+        <h1 class="loading-title">Loading</h1>
+        <h2>Refresh page if this message does not disappear</h2>
+      </div>
+      <div ui-view="header"></div>
+      <aside ui-view="sidebar" ng-class="toggle"></aside>
+      <main class="wrapper" ng-class="toggle">
+        <div ui-view="content"></div>
+      </main>
       <!--[if IE 9]>
       <script src="scripts/angular.min.js"></script>
       <script src="scripts/angular-resource.js"></script>

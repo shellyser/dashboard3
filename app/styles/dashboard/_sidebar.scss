@@ -5,7 +5,7 @@ aside {
   position: fixed;
   z-index: 998;
   background-color: $black;
-  top: 0rem;
+  top: 4rem;
   @include transition(top 1s);
   ul {
     margin: auto;

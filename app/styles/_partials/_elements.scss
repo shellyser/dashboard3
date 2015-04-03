@@ -8,20 +8,23 @@
   }
 }
 
-.drawer {
-  background-color: black(0.3);
+.label-legend{
   position: relative;
-  @include before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border-width: 12px 12px 8px;
-    border-style: solid;
-    border-color: transparent transparent black(0.3);
+  display: block;
+  text-align: right;
+  margin-bottom: 0rem;
+  input[type="checkbox"]{
+    visibility: hidden;
+  }
+  span{
+    width: .75rem;
+    height: .75rem;
     position: absolute;
-    top: -20px;
-    left: 4.5rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: -1rem;
+    @include radius(2px);
   }
 }
 
@@ -32,17 +35,6 @@
       display: inline-block;
       width: 1 / $i * 100%;
     }
-  }
-}
-
-%select {
-  background-image: url("/assets/img/dropdown-arrow.svg");
-  background-size: 11px 10px;
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  border: 0;
-  &:focus {
-    border: 0;
   }
 }
 

@@ -11,8 +11,8 @@
       <div ng-show="params.product === 'AC' " class="panel-view-options">
           <div class="panel-view-options-checkboxes">
               <div class="panel-view-options-checkbox">
-                  <label ng-repeat="device in devices">
-                      <input type="checkbox" class="checkbox-option" ng-checked="isDeviceSelected(device)" ng-click="updateDeviceSelection($event, device)"    id="{{device}}" chart-number="">{{device}}
+                  <label ng-repeat="device in devices" id="{{device}}">
+                      <input type="checkbox" class="checkbox-option" ng-checked="isDeviceSelected(device)" ng-click="updateDeviceSelection($event, device)" chart-number=""><span></span>{{device}}
                   </label>
               </div>
           </div>
