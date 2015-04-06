@@ -68,7 +68,7 @@ aside {
   	width: 8.1rem;
   	height: 100%;
   	left: 0rem;
-  	top: 4rem;
+  	top: 3rem;
   	padding-top: 0.75rem;
 	  @include transition(left 1s);
 	  ul{
@@ -91,7 +91,7 @@ aside.collapse {
 	top: -50rem;
 	left: 0rem;
 	@include break-min($main-break){
-		top: 4rem;
+		top: 3rem;
 	  left: -4rem;
 	  em {
 	    @include transition(0.5s);

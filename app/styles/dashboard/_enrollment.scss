@@ -164,7 +164,7 @@
 			}
 			.panel-view-options-checkbox{
 				margin-right: 1.25rem;
-				%extend .label-legend;
+				@extend .label-legend;
 				#delivered{
 					color: $yellow;
 					span{
